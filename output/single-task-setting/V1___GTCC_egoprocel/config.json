@@ -1,0 +1,90 @@
+{
+    "DATASET_NAME": "egoprocel",
+    "DATAFOLDER": "./datesets/egoprocel",
+    "EVAL_PLOTFOLDER": "./output/single-task-setting",
+    "BASEARCH": {
+        "ARCHITECTURE": "resnet50",
+        "Resnet50_ARCH": {
+            "temporal_depth": 2
+        },
+        "TEMPORAL_STACKING_ARCH": {
+            "temporal_depth": 2,
+            "conv_num_channels": 256,
+            "drop_layers": [
+                256,
+                1024,
+                512,
+                256
+            ],
+            "dropping": true,
+            "output_dimensions": 128
+        },
+        "NAIVE_ARCH": {
+            "layers": [
+                1024,
+                512,
+                512,
+                256
+            ],
+            "drop_layers": [
+                256,
+                1024,
+                512,
+                256
+            ]
+        }
+    },
+    "ARCHITECTURE": {
+        "MCN": false,
+        "drop_layers": [
+            256,
+            1024,
+            512,
+            256
+        ],
+        "attn_layers": [
+            512,
+            1024,
+            512,
+            512
+        ],
+        "num_heads": null
+    },
+    "LOSS_TYPE": {
+        "tcc": false,
+        "GTCC": true,
+        "LAV": false,
+        "VAVA": false
+    },
+    "TCC_ORIGINAL_PARAMS": {
+        "softmax_temp": 0.1,
+        "alignment_variance": 0.001
+    },
+    "GTCC_PARAMS": {
+        "softmax_temp": 0.1,
+        "max_gmm_iters": 8,
+        "n_components": 15,
+        "delta": 0.2,
+        "gamma": 0.95,
+        "alignment_variance": 0
+    },
+    "LAV_PARAMS": {
+        "min_temp": 0.1
+    },
+    "VAVA_PARAMS": {},
+    "SKIP_RATE": null,
+    "MULTITASK": false,
+    "OUTPUT_DIMENSIONALITY": 128,
+    "TRAIN_SPLIT": [
+        0.65,
+        0.5
+    ],
+    "DATA_SIZE": null,
+    "LAZY_LOAD": true,
+    "DEBUG": false,
+    "BATCH_SIZE": 2,
+    "LEARNING_RATE": 0.0001,
+    "NUM_EPOCHS": 50,
+    "VERSION": "1",
+    "EXPERIMENTNAME": "V1___GTCC_egoprocel"
+}

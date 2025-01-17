@@ -73,3 +73,9 @@ If you find this work useful in your project and you would like to cite your res
 # Thank you!
 If you have any questions, please feel free to email the first author, Gerard Donahue, at the following email:
 - donahue [DOT] g [AT] northeastern [DOT] edu
+
+
+
+set DATASET_PATH=./datesets
+set OUTPUT_PATH=./output
+set JSON_DPATH=./dset_jsons
